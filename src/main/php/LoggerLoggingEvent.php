@@ -133,7 +133,7 @@ class LoggerLoggingEvent {
 			$this->timeStamp = microtime(true);
 		}
 		
-		if ($throwable !== null && $throwable instanceof Exception) {
+		if ($throwable !== null && $throwable instanceof Throwable) {
 			$this->throwableInfo = new LoggerThrowableInformation($throwable);
 		}
 	}
@@ -340,7 +340,7 @@ class LoggerLoggingEvent {
 	 * to the time the event was constructed.
 	 * 
 	 * @deprecated This method has been replaced by getRelativeTime which 
-	 * 		does not perform unneccesary multiplication and formatting.
+	 * 		does not perform unnecessary multiplication and formatting.
 	 * 
 	 * @return integer 
 	 */
