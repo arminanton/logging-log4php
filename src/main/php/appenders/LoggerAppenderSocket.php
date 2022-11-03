@@ -79,7 +79,7 @@ class LoggerAppenderSocket extends LoggerAppender {
 			return;
 		}
 	
-		if (false === fwrite($socket, $this->layout->format($event))) {
+		if (false === fwrite($socket, $this->layout->format($event) ?? '' )) {
 			$this->warn("Error writing to socket. Closing appender.");
 			$this->closed = true;
 		}

@@ -69,9 +69,9 @@ class LoggerPatternConverterDate extends LoggerPatternConverter {
 	
 	public function convert(LoggerLoggingEvent $event) {
 		if ($this->useLocalDate) {
-			return $this->date($this->format, $event->getTimeStamp());
+			return $this->date($this->format, (int) $event->getTimeStamp());
 		}
-		return date($this->format, $event->getTimeStamp());
+		return date($this->format, (int) $event->getTimeStamp());
 	}
 	
 	/**
